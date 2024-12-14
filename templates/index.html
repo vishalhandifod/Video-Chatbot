@@ -1,0 +1,120 @@
+{% extends "layout.html" %}
+{% block content %}
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<link href="static/css/image.css" rel="stylesheet">
+
+<style>
+/* Main container styling */
+.main_full {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f0f4f8;
+    padding: 20px;
+}
+
+/* Styling for the form card */
+.form-card {
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Card header customization */
+.card-header {
+    background-color: #9A82C0 !important;
+    border-bottom: none;
+    padding: 20px 0;
+}
+
+.card-header h3 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Form input field customization */
+.input-field {
+    border: 1px solid #ced4da;
+    border-radius: 10px;
+    padding: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Focus effect on the input field */
+.input-field:focus {
+    border-color: #9A82C0;
+    box-shadow: 0 0 10px rgba(56, 13, 53, 0.603);
+    outline: none;
+}
+
+/* Styling for the submit button */
+.submit-btn {
+    font-size: 18px;
+    padding: 15px;
+    border-radius: 30px;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #9A82C0;
+    border: none;
+}
+
+/* Hover effect for the submit button */
+.submit-btn:hover {
+    background-color: #601f6c;
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(6, 9, 12, 0.974);
+}
+
+/* Adjustments for smaller screens */
+@media (max-width: 768px) {
+    .form-card {
+        padding: 20px;
+    }
+
+    .submit-btn {
+        font-size: 16px;
+        padding: 12px;
+    }
+}
+
+/* Container for the page layout */
+.container {
+    background-color: #ffffff;
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+</style>
+<main class="main_full">
+	<div class="container outerbox">
+		<div class="row justify-content-center">
+			<div class="col-lg-6 col-md-8 col-sm-10">
+				<div class="card shadow-lg border-0 rounded-lg form-card">
+					<div class="card-header text-center bg-primary text-white">
+						<h3 class="m-0">Submit Your Video URL</h3>
+					</div>
+					<div class="card-body">
+						<form action="" method="post" enctype="multipart/form-data">
+							<div class="form-group">
+                                <label for="exampleInputFile" class="form-label">Upload Video</label>
+                                <input type="file" class="form-control form-control-lg input-field" 
+                                       id="exampleInputFile" aria-describedby="fileHelp" 
+                                       name="video" accept="video/*" placeholder="Choose a Video File">
+                            </div>
+							<button id="predict" class="btn btn-primary btn-lg btn-block submit-btn">
+								Submit
+							</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</main>
+
+
+
+
+
+{% endblock %}
